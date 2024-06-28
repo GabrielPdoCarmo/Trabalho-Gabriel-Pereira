@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import Login from "./pages/Login";
+import CardList from "./pages/CardList";
+import CardDetails from "./pages/CardDetails"; // Importe o componente CardDetails
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/cards",
+    element: <CardList />,
+  },
+  {
+    path: "/card/:id", // Adicione a rota para a página de detalhes da carta
+    element: <CardDetails />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <div className="body">
+        <div className="App">
+          <RouterProvider router={router} />
+        </div>
+      </div>
+    </ChakraProvider>
   );
 }
 

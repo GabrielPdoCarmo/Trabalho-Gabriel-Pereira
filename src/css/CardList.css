@@ -1,0 +1,71 @@
+/* src/pages/CardList.css */
+
+.card-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Adiciona posição relativa */
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-item {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 150px;
+}
+
+.card-item p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.card-item img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  border-radius: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Estilos para a barra de pesquisa */
+.card-list-container input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px; /* Ajuste conforme necessário */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Adiciona posição absoluta */
+  left: -350px; /* Ajusta a posição à esquerda */
+  top: 90px; /* Ajusta a posição ao topo */
+}
